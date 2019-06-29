@@ -1,3 +1,68 @@
-<p>
-  home works!
-</p>
+  <!-- Small boxes (Stat box) -->
+  <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3 *ngIf="dashboard">{{ dashboard.properties_count }}</h3>
+            <h3 *ngIf="!dashboard">-</h3>
+  
+            <p>Properties</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a [routerLink]="['/properties']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3 *ngIf="dashboard">{{ dashboard.customers_count }}</h3>
+              <h3 *ngIf="!dashboard">-</h3>
+    
+              <p>Customers</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a [routerLink]="['/customers']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+          <div class="inner">
+            <h3 *ngIf="dashboard">{{ dashboard.leases_count }}</h3>
+            <h3 *ngIf="!dashboard">-</h3>
+  
+            <p>Leases</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-bag"></i>
+          </div>
+          <a [routerLink]="['/clients']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red">
+          <div class="inner">
+            <h3 *ngIf="dashboard">{{ dashboard.customer_payments | number }}<sup style="font-size: 20px">TSH</sup></h3>
+            <h3 *ngIf="!dashboard">-<sup style="font-size: 20px">TSH</sup></h3>
+  
+            <p>Revenue</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-pie-graph"></i>
+          </div>
+          <a [routerLink]="['/revenue']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+      <!-- ./col -->
+    </div>
+    <!-- /.row -->
