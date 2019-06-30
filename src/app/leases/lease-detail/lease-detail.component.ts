@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Lease } from 'src/app/_models/lease.model';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-lease-detail',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeaseDetailComponent implements OnInit {
 
-  constructor() { }
+  lease: Lease;
+
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    this.getLease();
+  }
+
+  getLease(): void{
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.apiService.getLease(id).subscribe((res: any) => {
+      this.lease = res.data;
+    })
   }
 
 }

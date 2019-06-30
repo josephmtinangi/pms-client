@@ -36,4 +36,13 @@ export class ApiService {
   getCustomer(id: number) {
     return this.httpClient.get(this.API_URL + '/customers/' + id);
   }
+
+  // Leases
+  getLeases(){
+    return this.httpClient.get(this.API_URL + '/leases');
+  }
+
+  getLease(id: number){
+    return this.httpClient.get(this.API_URL + '/leases/' + id);
+  }  
 }
