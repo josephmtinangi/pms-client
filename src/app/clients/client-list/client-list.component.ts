@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/_models/client.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-client-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientListComponent implements OnInit {
 
-  constructor() { }
+  clients: Array<Client> = [];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.getClients();
+  }
+
+  getClients() {
+    this.apiService.getClients().subscribe((res: any) => {
+      this.clients = res.data;
+    });    
   }
 
 }

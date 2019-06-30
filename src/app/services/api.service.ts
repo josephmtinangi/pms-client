@@ -72,7 +72,16 @@ export class ApiService {
 
   getCustomerPayment(id: number){
     return this.httpClient.get(this.API_URL + '/customer-payments/' + id);
-  }   
+  }  
+  
+  // Clients
+  getClients(){
+    return this.httpClient.get(this.API_URL + '/clients');
+  }
+
+  getClient(id: number) {
+    return this.httpClient.get(this.API_URL + '/clients/' + id);
+  }  
 
   // Download Invoice
   downloadInvoice(id: number): Observable<Blob> {

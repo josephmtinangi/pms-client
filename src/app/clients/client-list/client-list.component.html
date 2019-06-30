@@ -1,3 +1,43 @@
-<p>
-  client-list works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Users</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table *ngIf="clients.length > 0" class="table table-bordered">
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Type</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>TIN</th>
+            <th>Physical Address</th>
+            <th>Postal Address</th>
+            <th>View</th>
+          </tr>
+          <tr *ngFor="let client of clients">
+            <td>{{ client.id }}</td>
+            <td>{{ client.first_name }} {{ client.middle_name }} {{ client.last_name }}</td>
+            <td>{{ client.code }}</td>
+            <td>{{ client.client_type.name }}</td>
+            <td>{{ client.phone }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.tin }}</td>
+            <td>{{ client.physical_address }}</td>
+            <td>{{ client.postal_address }}</td>
+            <td>
+              <a routerLink="/users/{{ client.id }}"><div class="fa fa-eye"></div></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+    <a routerLink="/clients/create" class="btn btn-primary">Add</a> 
+  </div>
+</div>
