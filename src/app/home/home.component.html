@@ -44,7 +44,7 @@
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a [routerLink]="['/clients']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a [routerLink]="['/leases']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -55,12 +55,12 @@
             <h3 *ngIf="dashboard">{{ dashboard.customer_payments | number }}<sup style="font-size: 20px">TSH</sup></h3>
             <h3 *ngIf="!dashboard">-<sup style="font-size: 20px">TSH</sup></h3>
   
-            <p>Revenue</p>
+            <p>Collection</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a [routerLink]="['/revenue']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a [routerLink]="['/customer-payments']" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
