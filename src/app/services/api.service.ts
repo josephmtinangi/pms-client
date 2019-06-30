@@ -19,12 +19,21 @@ export class ApiService {
     return this.httpClient.get(this.API_URL + '/dashboard');
   } 
   
-  // Dashboard
+  // Properties
   getProperties() {
     return this.httpClient.get(this.API_URL + '/properties');
   }
 
   getProperty(id: number) {
     return this.httpClient.get(this.API_URL + '/properties/' + id);
+  }
+
+  // Customers
+  getCustomers() {
+    return this.httpClient.get(this.API_URL + '/customers');
+  }
+
+  getCustomer(id: number) {
+    return this.httpClient.get(this.API_URL + '/customers/' + id);
   }
 }
