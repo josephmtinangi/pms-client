@@ -56,6 +56,16 @@ export class ApiService {
     return this.httpClient.get(this.API_URL + '/client-invoices/' + id);
   }
 
+  // Client Payments
+  getClientPayments(){
+    return this.httpClient.get(this.API_URL + '/client-payments');
+  } 
+
+  // Customer Payments
+  getCustomerPayments(){
+    return this.httpClient.get(this.API_URL + '/customer-payments');
+  } 
+
   // Download Invoice
   downloadInvoice(id: number): Observable<Blob> {
     // this.http refers to HttpClient. Note here that you cannot use the generic get<Blob> as it does not compile: instead you "choose" the appropriate API in this way.
