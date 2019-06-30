@@ -17,5 +17,14 @@ export class ApiService {
   // Dashboard
   getDashboardData(){
     return this.httpClient.get(this.API_URL + '/dashboard');
-  }  
+  } 
+  
+  // Dashboard
+  getProperties() {
+    return this.httpClient.get(this.API_URL + '/properties');
+  }
+
+  getProperty(id: number) {
+    return this.httpClient.get(this.API_URL + '/properties/' + id);
+  }
 }
