@@ -23,6 +23,7 @@ import { ClientDetailComponent } from './clients/client-detail/client-detail.com
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { LeaseListComponent } from './leases/lease-list/lease-list.component';
 import { LeaseDetailComponent } from './leases/lease-detail/lease-detail.component';
+import { ClientCreateComponent } from './clients/client-create/client-create.component';
 
 const routes: Routes = [
   { 
@@ -61,6 +62,7 @@ const routes: Routes = [
       { path: 'customer-payments/:id', component: CustomerPaymentDetailComponent, canActivate: [DashboardGuard] },
 
       { path: 'users', component: ClientListComponent, canActivate: [DashboardGuard] },
+      { path: 'users/create', component: ClientCreateComponent, canActivate: [DashboardGuard] },
       { path: 'users/:id', component: ClientDetailComponent, canActivate: [DashboardGuard] },
 
       { path: 'reset-password', component: ResetPasswordComponent, canActivate: [DashboardGuard] },

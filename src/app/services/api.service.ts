@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Client } from '../_models/client.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class ApiService {
   getProperties() {
     return this.httpClient.get(this.API_URL + '/properties');
   }
+
+  getAllProperties() {
+    return this.httpClient.get(this.API_URL + '/properties/all');
+  }  
 
   getProperty(id: number) {
     return this.httpClient.get(this.API_URL + '/properties/' + id);
@@ -82,6 +87,10 @@ export class ApiService {
   getClient(id: number) {
     return this.httpClient.get(this.API_URL + '/clients/' + id);
   }  
+
+  storeClient(client: Client) {
+    return this.httpClient.post(this.API_URL + '/clients', client);
+  }
 
   // Download Invoice
   downloadInvoice(id: number): Observable<Blob> {

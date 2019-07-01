@@ -11,7 +11,6 @@
             <th style="width: 10px">#</th>
             <th>Name</th>
             <th>Code</th>
-            <th>Type</th>
             <th>Phone</th>
             <th>Email</th>
             <th>TIN</th>
@@ -23,7 +22,6 @@
             <td>{{ client.id }}</td>
             <td>{{ client.first_name }} {{ client.middle_name }} {{ client.last_name }}</td>
             <td>{{ client.code }}</td>
-            <td>{{ client.client_type.name }}</td>
             <td>{{ client.phone }}</td>
             <td>{{ client.email }}</td>
             <td>{{ client.tin }}</td>
@@ -38,6 +36,6 @@
       <!-- /.box-body -->
     </div>
     <!-- /.box -->
-    <a routerLink="/clients/create" class="btn btn-primary">Add</a> 
+    <a routerLink="/users/create" class="btn btn-primary">Add</a> 
   </div>
 </div>

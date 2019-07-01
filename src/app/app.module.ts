@@ -31,6 +31,7 @@ import { ClientDetailComponent } from './clients/client-detail/client-detail.com
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { LeaseListComponent } from './leases/lease-list/lease-list.component';
 import { LeaseDetailComponent } from './leases/lease-detail/lease-detail.component';
+import { ClientCreateComponent } from './clients/client-create/client-create.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { LeaseDetailComponent } from './leases/lease-detail/lease-detail.compone
     ClientDetailComponent,
     ResetPasswordComponent,
     LeaseListComponent,
-    LeaseDetailComponent
+    LeaseDetailComponent,
+    ClientCreateComponent
   ],
   imports: [
     BrowserModule,
