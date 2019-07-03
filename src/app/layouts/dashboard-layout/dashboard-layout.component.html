@@ -36,7 +36,7 @@
   
                   <p>
                     {{ user.first_name }} {{ user.middle_name }} {{ user.last_name }}
-                    <small>Member since {{ user.created_at }}</small>
+                    <small>Member since {{ user.created_at | date }}</small>
                   </p>
                 </li>
                 <!-- Menu Footer-->
@@ -104,8 +104,5 @@
       <strong>Copyright &copy; 2019 <a href="http://dodomarealestate.co.tz">Dodoma Real Estate Agent Ltd</a>.</strong> All rights reserved.
     </footer>
   
-    <!-- Add the sidebar's background. This div must be placed
-    immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
