@@ -9,16 +9,8 @@
         <table class="table table-bordered">
             <tbody>
               <tr>
-                <th>First name</th>
-                <td>{{ customer.first_name }}</td>
-              </tr>
-              <tr>
-                <th>Middle name</th>
-                <td>{{ customer.middle_name }}</td>
-              </tr>
-              <tr>
-                <th>Last name</th>
-                <td>{{ customer.last_name }}</td>
+                <th>Name</th>
+                <td>{{ customer.first_name }} {{ customer.middle_name }} {{ customer.last_name }}</td>
               </tr>
               <tr>
                 <th>Type</th>
@@ -78,7 +70,7 @@
               <td>{{ contract.id }}</td>
               <td>{{ contract.start_date | date }}</td>
               <td>{{ contract.end_date | date }}</td>
-              <td>{{ contract.rent_per_month | currency:'TZS' }}</td>
+              <td class="text-right">{{ contract.rent_per_month | number }}</td>
               <td>{{ contract.payment_interval }}</td>
               <td>{{ contract.contract_duration }}</td>
               <td>{{ contract.created_at | date }}</td>

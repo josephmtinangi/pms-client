@@ -25,8 +25,8 @@
                 </td>
               </tr>
               <tr>
-                <th>Rent per month</th>
-                <td>{{ lease.rent_per_month | currency:'TZS' }}</td>
+                <th>Rent per month (TSH)</th>
+                <td>{{ lease.rent_per_month | number }}</td>
               </tr>
               <tr>
                 <th>Payment interval (months)</th>
@@ -101,7 +101,7 @@
             <tr>
               <th style="width: 10px">#</th>
               <th>Control Number</th>
-              <th>Amount</th>
+              <th>Amount (TSH)</th>
               <th>Start date</th>
               <th>End date</th>
               <th>Expiry date</th>
@@ -111,7 +111,7 @@
             <tr *ngFor="let control_number of lease.control_numbers">
               <td>{{ control_number.id }}</td>
               <td>{{ control_number.control_number }}</td>
-              <td>{{ control_number.amount_to_be_paid | currency:'TZS' }}</td>
+              <td class="text-right">{{ control_number.amount_to_be_paid | number }}</td>
               <td>{{ control_number.start_date | date }}</td>
               <td>{{ control_number.end_date | date }}</td>
               <td>{{ control_number.expiry_date | date }}</td>
@@ -121,7 +121,7 @@
                 <strong *ngIf="!control_number.paid_at" class="text-danger">NOT PAID</strong>
               </td>
               <td>
-                <a *ngFor="let invoice of control_number.invoices" routerLink="/invoices/{{ invoice.id }}"><div class="fa fa-eye"></div></a>
+                <a *ngFor="let invoice of control_number.invoices" routerLink="/customer-invoices/{{ invoice.id }}"><div class="fa fa-eye"></div></a>
               </td>
             </tr>
           </table>
